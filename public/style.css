@@ -288,6 +288,7 @@ input:focus{
 .recent-card{
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
 
@@ -303,6 +304,10 @@ input:focus{
   gap: 24px;
   margin: 20px auto;
   min-height: 800px;
+}
+
+.recent-card{
+
 }
 
 .card-container{

@@ -34,22 +34,25 @@
           <h3>Recent post</h3>
 
           <div class="recent-card">
-            <% 
-            data.forEach((item, i)=>{%>
-              <%  if(item.title !== post.title && i < 3){%>
-                <a class="card-container" href="/<%= item._id %>">
-                  <div class="card-image">
-                    <img src="<%= item.imageUrl %>">
-                  </div>
-                  <div class="card-body">
-                    <h4><%= item.title %></h4>
-                    <h5><%= item.createdAt.toDateString() %></h5>
-                  </div>
-                </a>
+            
+            <%let count = 0;
+              data.forEach((item)=>{
+               if(item.title !== post.title && count < 3){
+                  count++ %>
+                  <a class="card-container" href="/<%= item._id %>">
+                    <div class="card-image">
+                      <img src="<%= item.imageUrl %>">
+                    </div>
+                    <div class="card-body">
+                      <h4><%= item.title %></h4>
+                      <h5><%= item.createdAt.toDateString() %></h5>
+                    </div>
+                  </a>
                 
-              <%}%>
+                <%}%>
               
-            <%})%>
+              <%})
+            %>;
 
            
           </div>
