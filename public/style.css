@@ -551,6 +551,15 @@ input:focus{
   color: red;
 }
 
+.post-buttons{
+  display: flex;
+  gap: 5px;
+}
+
+.post-buttons img:active{
+  transform: translateY(2px);
+}
+
 /* Error page */
 .error-icon{
   width: 96px;
@@ -610,7 +619,9 @@ input:focus{
   margin: 50px auto;
 }
 
-@media(min-width:993px) {}
+@media(min-width:993px) {
+  
+}
 
 
 @media(min-width:769px) and (max-width:992px){
@@ -644,7 +655,6 @@ input:focus{
     margin: 20px auto;
   }
 
-  
   .card-container {
     width: 48%;
 
@@ -652,6 +662,30 @@ input:focus{
 
   .login {
     width: 60%;
+  }
+
+  h2 {
+    font-size: 37px;
+    line-height: 48px;
+    letter-spacing: 0%;
+  }
+
+  h3 {
+    font-size: 21px;
+    line-height: 32px;
+    letter-spacing: 0.19%;
+  }
+
+  h4 {
+    font-size: 19px;
+    line-height: 27px;
+    letter-spacing: 0.3%;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.7%;
   }
 }
 
@@ -729,6 +763,30 @@ input:focus{
   .subscribtion-container p {
     width: 95%;
     margin: 20px auto;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 43px;
+    letter-spacing: 0%;
+  }
+
+  h3 {
+    font-size: 17px;
+    line-height: 27px;
+    letter-spacing: 0.13%;
+  }
+
+  h4 {
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.5%;
+  }
+
+  h5 {
+    font-size: 14.7px;
+    line-height: 21.3px;
+    letter-spacing: 0.6%;
   }
 
 }

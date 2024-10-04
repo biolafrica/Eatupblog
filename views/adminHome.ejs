@@ -10,7 +10,7 @@
 
       <div class="new-post">
         <h3>Post</h3>
-        <a href="/admin/create">+Add new</a>
+        <a href="/admin/create" class="color">+Add new</a>
       </div>
 
       <div>
@@ -23,8 +23,15 @@
               </div>
       
               <div class="post-buttons">
-                <a href="/admin/edit/<%= item._id %>" class="btn">Edit</a>
-                <a href="/admin/delete/<%= item._id %>" class="btn">Delete</a>
+
+                <a href="/admin/edit/<%= item._id %>">
+                  <img src="/images/Mode edit.svg" alt="">
+                </a>
+
+                <a href="/admin/delete/<%= item._id %>" >
+                  <img src="/images/Delete.svg" alt="">
+                </a>
+
               </div>
       
             </div>
