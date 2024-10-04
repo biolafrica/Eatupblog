@@ -92,10 +92,19 @@ textarea{
   display: block;
   box-sizing: border-box;
   width: 100%;
-  padding: 0.8rem 0.75rem;
+  padding: 15px 0.75rem;
   border-radius: 10px;
   border: 1px solid var(--border);
   margin-top: 5px;
+
+}
+
+input::placeholder{
+
+  font-weight: 400;
+  font-size: clamp(16px, 2.5vw, 21px);
+  line-height: clamp(21px, 3vw, 32px);
+  letter-spacing: clamp(0.5%, 0.1vw, 0.6%);
 
 }
 
@@ -115,6 +124,11 @@ input:focus{
   background-color: #f8c426;
   color: black;
   box-sizing: border-box;
+}
+
+button,
+input{
+  padding: 0;
 }
 
 .btn:hover{
@@ -263,7 +277,8 @@ input:focus{
   border-radius: var(--border-radius);
   padding:0.7rem 0.75rem;
   z-index: 100;
-  
+  align-items: center;
+  box-sizing: border-box;
   
 }
 
@@ -275,6 +290,7 @@ input:focus{
 .search-container input{
   outline: none;
   border: none;
+  padding: 2px;
 }
 
 
@@ -304,10 +320,6 @@ input:focus{
   gap: 24px;
   margin: 20px auto;
   min-height: 800px;
-}
-
-.recent-card{
-
 }
 
 .card-container{
@@ -470,7 +482,6 @@ input:focus{
 
 }
 
-
 .image-body{
   width: 80%;
   margin: 50px auto;
@@ -495,8 +506,6 @@ input:focus{
   color: var(--dis-text);
 }
 
-
-
 /* About page */
 
 .picture-intro{
@@ -520,6 +529,7 @@ input:focus{
   font-size: 24px;
 
 }
+
 .ref{
   width: 200px;
   border: none;
@@ -533,7 +543,6 @@ input:focus{
   text-wrap: wrap;
   
 }
-
 
 /* Admin page */
 .post-list,
@@ -601,8 +610,6 @@ input:focus{
   border-radius: 5px;
 }
 
-
-
 .subscribtion-container h3{
   width: 80%;
   margin: 20px auto;
@@ -623,6 +630,7 @@ input:focus{
   display: grid;
   margin: 50px auto;
 }
+
 
 @media(min-width:993px) {
 
@@ -673,12 +681,12 @@ input:focus{
   }
 
 
-  .subscribtion-container h1 {
+  .subscribtion-container h3 {
     width: 60%;
     margin: 20px auto;
   }
 
-  .subscribtion-container p {
+  .subscribtion-container h5{
     width: 65%;
     margin: 20px auto;
   }
@@ -690,6 +698,16 @@ input:focus{
 
   .login {
     width: 60%;
+  }
+
+  .subscribtion-container form {
+    flex-direction: column;
+    width: 95%;
+
+  }
+
+  .subscribtion-container {
+    width: 80%;
   }
 
   h2 {
@@ -714,6 +732,28 @@ input:focus{
     font-size: 16px;
     line-height: 21px;
     letter-spacing: 0.7%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.5%;
+
+
+  }
+
+  input::placeholder {
+
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.5%;
+
   }
 }
 
@@ -783,14 +823,18 @@ input:focus{
 
   }
 
-  .subscribtion-container h1 {
+  .subscribtion-container h3 {
     width: 90%;
     margin: 20px auto;
   }
 
-  .subscribtion-container p {
+  .subscribtion-container h5 {
     width: 95%;
     margin: 20px auto;
+  }
+
+  .subscribtion-container{
+    width: 100%;
   }
 
   .recent-card {
@@ -828,6 +872,28 @@ input:focus{
     font-size: 14.7px;
     line-height: 21.3px;
     letter-spacing: 0.6%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="file"],
+  input[type="search"],
+  select,
+  textarea {
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.5%;
+    
+
+  }
+
+  input::placeholder {
+
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.5%;
+
   }
 
 }

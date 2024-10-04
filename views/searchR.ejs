@@ -7,18 +7,18 @@
       <%- include('./partials/header.ejs') %>
 
 
-      <h1 class="search-text">Search Results for : <span style="color: #000000E0;" id="searchedValue">'<%= search %>'</span></h1>
+      <h3 class="search-text">Search Results for : <span style="color: #000000E0;" id="searchedValue">'<%= search %>'</span></h3>
 
       <div class="recent-card" id="searchDisplay">
         <%if(data.length > 0){%>
           <%data.forEach((item)=>{%>
             <a class="card-container" href="/<%= item._id %>">
               <div class="card-image">
-                <img src="/images/unsplash_e5Q5vWO55uU.png" alt="restaurant owner image">
+                <img src="<%= item.imageUrl %>">
               </div>
               <div class="card-body">
-                <h2><%= item.title %></h2>
-                <h3><%= item.createdAt.toDateString() %></h3>
+                <h4><%= item.title %></h4>
+                <h5><%= item.createdAt.toDateString() %></h5>
               </div>
             </a>
 
