@@ -620,9 +620,32 @@ input:focus{
 }
 
 @media(min-width:993px) {
-  
-}
 
+  h2 {
+    font-size: 43px;
+    line-height: 53px;
+    letter-spacing: 0%;
+  }
+
+  h3 {
+    font-size: 29px;
+    line-height: 37px;
+    letter-spacing: 0%;
+  }
+
+  h4 {
+    font-size: 21px;
+    line-height: 32px;
+    letter-spacing: 0.6%;
+  }
+
+  h5 {
+    font-size: 19px;
+    line-height: 27px;
+    letter-spacing: 0%;
+  }
+
+}
 
 @media(min-width:769px) and (max-width:992px){
 
@@ -763,6 +786,19 @@ input:focus{
   .subscribtion-container p {
     width: 95%;
     margin: 20px auto;
+  }
+
+  .recent-card {
+    flex-direction: column;
+  }
+
+  .topic h2 {
+    width: 100%;
+  }
+
+  .content-body,
+  .image-body {
+    width: 100%;
   }
 
   h2 {
