@@ -14,20 +14,20 @@
       <%- include('./partials/header.ejs') %>
       <!--card section-->
       <div class="main">
-        <h2>
+        <h4>
           Stories about your favorite food delivery brand
-        </h2>
+        </h4>
 
         <div class="sub-container">
           <%if(post.length > 0){%>
             <%post.forEach((item)=>{%>
               <a class="card-container" href="/<%= item._id %>">
                 <div class="card-image">
-                  <img src="/images/unsplash_e5Q5vWO55uU.png" alt="restaurant owner image">
+                  <img src="<%= item.imageUrl %>">
                 </div>
                 <div class="card-body">
-                  <h2><%= item.title %></h2>
-                  <h3><%= item.createdAt.toDateString() %></h3>
+                  <h4><%= item.title %></h4>
+                  <h5><%= item.createdAt.toDateString() %></h5>
                 </div>
               </a>
             <%})%>
@@ -43,6 +43,7 @@
           
 
         </div>
+
       </div>
 
       <!--pagination-->
@@ -62,12 +63,12 @@
       <div class="subscribtion-container">
 
         <div class="js-appreciation" style="display: none;">
-          <h1>Thank you for subscribing!</h1>
+          <h3>Thank you for subscribing!</h3>
         </div>
 
         <div class="js-main">
-          <h1>Receive latest updates directly to your inbox</h1>
-          <p>Kindly enter your email to get the latest news about your favorite food delivery brand.</p>
+          <h3><b>Receive latest updates directly to your inbox</b></h3>
+          <h5>Kindly enter your email to get the latest news about your favorite brand.</h5>
   
           <form class="sub">
             <input type="email" placeholder="enter your email here"  class="sub-input" name="email">

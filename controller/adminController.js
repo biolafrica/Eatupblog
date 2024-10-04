@@ -1,8 +1,29 @@
 const User = require("../model/userModel");
 const jwt = require("jsonwebtoken");
 const Post = require("../model/postModel");
-const {protectRoute} = require("../Middleware/auth");
+const multer = require("multer");
+//const {protectRoute} = require("../Middleware/auth");
+const {CloudinaryStorage} = require("multer-storage-cloudinary");
+const cloudinary = require('cloudinary').v2
 
+// configure cloudinary 
+const {cloud_name, api_key, api_secret} = process.env;
+cloudinary.config({
+  cloud_name,
+  api_key,
+  api_secret
+});
+
+//setup multer for storage
+const storage = new CloudinaryStorage({
+  cloudinary : cloudinary,
+  params: {
+    folder: "eatupBlogs",
+    allowed_formats:["jpg", "jpeg", "png"],
+  }
+})
+
+const upload = multer({storage:storage})
 
 const maxAge = 3*24*60*60;
 const secret = process.env.jwtSignature; 
@@ -42,8 +63,6 @@ const errorHandling = (err) =>{
   return errors;
 
 }
-
-
 
 const adminRegGet = (req, res)=>{
   const locals ={
@@ -150,16 +169,32 @@ const adminCreateGet = (req, res)=>{
 }
 
 const adminCreatePost = async(req, res)=>{
+  upload.single("image")(req,res, async(err)=>{
+    if(err){
+      console.error("Error uploading file:", err);
+      return res.status(400).json({error : "Error uploading file"});
+    }
+
+    try {
+      const {body, title} = req.body;
+      console.log(body, title)
+      const imageUrl = req.file ? req.file.path : null;
+
+      if(!imageUrl){
+        return res.status(400).json({error : "image upload failed"});
+      }
+
+      const result = await Post.create({body,title, imageUrl});
+      res.status(201).json({id: result.id});
+      
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({error: "server error"});
+      
+    }
+})
   
-  try {
-    const {body, title} = req.body;
-    const result = await Post.create({body,title});
-    res.status(201).json({id: result.id});
-    
-  } catch (error) {
-    console.log(error)
-    
-  }
+ 
 
 }
 
@@ -224,7 +259,6 @@ const adminEditPut = async(req, res)=>{
   
 }
 
-
 const adminEditDelete = async(req, res)=>{
   const id = req.params.id;
   try {
@@ -243,10 +277,6 @@ const adminEditDelete = async(req, res)=>{
 
   
 }
-
-
-
-
 
 module.exports = {
   adminRegGet,

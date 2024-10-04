@@ -2,6 +2,7 @@ const Router = require("express");
 const adminController = require('../controller/adminController');
 
 const router = Router();
+
 router.get("/", adminController.adminRegGet);
 router.get("/create", adminController.adminCreateGet);
 router.get("/logout", adminController.adminLogout);

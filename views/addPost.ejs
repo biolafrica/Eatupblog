@@ -6,18 +6,22 @@
       <%- include('./partials/nav.ejs') %>
       <%- include('./partials/header.ejs') %>
 
-      <form class="form create" action="">
+      <form class="form create" id="uploadForm" enctype="multipart/form-data">
 
         <h3>Add Blog</h3>
 
         <label for=""><b>Title:</b></label>
-        <input type="text" placeholder="Blog title" name="title">
+        <input type="text" placeholder="Blog title" name="title" id="title" required>
+
+        <label for=""><b>Image:</b></label>
+        <input type="file" placeholder="Blog Image" name="image" id="image" required>
 
         <label for=""><b>Body:</b></label>
-        <textarea name="body" cols="30" rows="10" placeholder="Blog body"></textarea>
+        <textarea name="body" placeholder="Blog body" id="body" required></textarea>
 
 
         <button class="btn">submit</button>
+        
 
       </form>
      
@@ -31,32 +35,36 @@
 
       (function postAdd(){
         "use strict"
-        const form = document.querySelector(".form.create");
-        form.addEventListener("submit", async(e)=>{
+        
+        document.querySelector('#uploadForm').addEventListener("submit", async(e)=>{
           e.preventDefault();
-          const title = form.title.value;
-          const body = form.body.value;
+          
+          const form = document.querySelector("#uploadForm")
+          const formData = new FormData(form);
+          console.log(formData);
+
           try {
             const res = await fetch("/admin/create", {
-              method : "POST",
-              body : JSON.stringify({title, body}),
-              headers: {"content-Type" : "application/json"}
-
-            }); 
+              method: "POST",
+              body: formData
+            });
 
             const data = await res.json();
             console.log(data);
-            if(data.id){
+            if (data.id) {
+              alert("post Created Succesfully")
               location.assign("/admin/home")
-            } 
-            
+            }else{
+              alert("Failed to upload post")
+            }
+
           } catch (error) {
             console.log(error)
-            
+
           }
 
         })
-
+        
       }());
       
     </script>

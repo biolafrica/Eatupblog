@@ -8,8 +8,8 @@
 
 
       <div class="topic">
-        <h1><%= post.title %></h1>
-        <h3><%= post.createdAt.toDateString() %></h3>
+        <h2><b><%= post.title %></b></h2>
+        <h4><%= post.createdAt.toDateString() %></h4>
         <div class="share-link share-linkjs">
           share on 
           <span>
@@ -22,10 +22,10 @@
 
       <div class="blog-body">
         <div class="image-body">
-          <img src="/images/unsplash_e5Q5vWO55uU.png" alt="restaurant owner image">
+          <img src="<%= post.imageUrl %>" alt="restaurant owner image">
         </div>
         <div class="content-body">
-         <%= post.body %>
+          <h5><%= post.body %></h5>
         </div>
       </div>
 
@@ -39,11 +39,11 @@
               <%  if(item.title !== post.title && i < 3){%>
                 <a class="card-container" href="/<%= item._id %>">
                   <div class="card-image">
-                    <img src="/images/unsplash_e5Q5vWO55uU.png" alt="restaurant owner image">
+                    <img src="<%= item.imageUrl %>">
                   </div>
                   <div class="card-body">
-                    <h2><%= item.title %></h2>
-                    <h3><%= item.createdAt.toDateString() %></h3>
+                    <h4><%= item.title %></h4>
+                    <h5><%= item.createdAt.toDateString() %></h5>
                   </div>
                 </a>
                 
