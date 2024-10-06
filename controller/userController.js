@@ -10,7 +10,7 @@ const getHome = async(req, res)=>{
     description : "Eatup Food Services Limited Official Blog"
   };
 
-  const perPage = 6;
+  const perPage = 9;
   const page = parseInt(req.query.page) || 1;
 
 
