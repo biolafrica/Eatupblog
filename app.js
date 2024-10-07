@@ -23,15 +23,13 @@ mongoose.connect(URI,)
 .catch(error => console.log(error));
 
 // Start server
-app.listen(3002, ()=>{
-  console.log("connected to the server")
+const PORT = process.env.PORT || 3002
+app.listen(PORT, ()=>{
+  console.log(`connected to the server on port ${PORT}`)
 })
 
 //setup view engine
 app.set("view engine", "ejs");
-
-//app.get("*", checkAdmin);
-//app.post("*", checkAdmin);
 
 // middleware to check authentication
 app.use(checkAdmin);
