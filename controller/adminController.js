@@ -2,7 +2,6 @@ const User = require("../model/userModel");
 const jwt = require("jsonwebtoken");
 const Post = require("../model/postModel");
 const multer = require("multer");
-//const {protectRoute} = require("../Middleware/auth");
 const {CloudinaryStorage} = require("multer-storage-cloudinary");
 const cloudinary = require('cloudinary').v2
 

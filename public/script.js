@@ -8,10 +8,7 @@
   const searchText = document.querySelector('.input');
   const hamburgerBtn = document.querySelectorAll(".menujs");
   const navList = document.querySelector('.sub-mainjs');
-  const searchEl = document.getElementById('searchDisplay');
-
   const facebook = document.getElementById("fb-icon");
-  const instagram = document.getElementById("insta-icon");
   const linkedIn = document.getElementById("linkedIn-icon");
   const twitter = document.getElementById("twitter-icon");
 
