@@ -34,6 +34,7 @@ img{
 
 a{ color: var(--sec-text); text-decoration: none;}
 
+h1,
 h2,
 h3,
 h4,
@@ -674,9 +675,11 @@ input{
   gap: 10px;
   width: 60%;
   margin: 20px auto;
+  align-items:end
 }
 .subscribtion-container input{
   border-radius: 5px;
+
 }
 
 .subscribtion-container h3{
@@ -688,7 +691,10 @@ input{
   width: 85%;
   margin: 20px auto;
 }
-
+.subscribtion-container button {
+  padding: 16px 10px;
+ 
+}
 .appreciation{
   display: none;
   margin: 50px auto;
@@ -699,7 +705,6 @@ input{
   display: grid;
   margin: 50px auto;
 }
-
 
 @media(min-width:993px) {
 
@@ -771,7 +776,7 @@ input{
 
   .subscribtion-container form {
     flex-direction: column;
-    width: 95%;
+    width: 50%;
 
   }
 
@@ -783,6 +788,12 @@ input{
     width: 45%;
 
   }
+
+  .subscribtion-container button {
+    width: 100%;
+
+  }
+
   h1 {
     font-size: 60px;
     line-height: 69.3px;
@@ -892,7 +903,12 @@ input{
 
   .subscribtion-container form {
     flex-direction: column;
-    width: 95%;
+    width: 75%;
+
+  }
+
+  .subscribtion-container button {
+    width: 100%;
 
   }
 
@@ -909,6 +925,7 @@ input{
   .subscribtion-container{
     width: 100%;
   }
+
 
   .recent-card {
     flex-direction: column;
