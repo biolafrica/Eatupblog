@@ -45,33 +45,6 @@
   });
 
 
-
-  document.querySelectorAll(".share-linkjs").forEach((element)=>{
-
-    element.addEventListener("click", (e)=>{
-      if(e.target === twitter){
-        const tweetUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent("localhost:3000/<%= item._id %>")}`;
-    
-        window.open(tweetUrl, "_blank")
-    
-      }
-    
-      if(e.target === facebook){  
-        const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent("localhost:3000/<%= item._id %>")}`;
-    
-        window.open(facebookShareUrl, '_blank');
-    
-      }
-    
-      if(e.target === linkedIn){
-        const linkedInShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("localhost:3000/<%= item._id %>")}`;
-    
-        window.open(linkedInShareUrl, '_blank');
-      }
-    })
-
-  })
-
 }());
 
 

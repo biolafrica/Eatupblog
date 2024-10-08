@@ -13,9 +13,19 @@
         <div class="share-link share-linkjs">
           share on 
           <span>
-            <img src="/images/facebook_symbol_fill.svg" alt="facebook icon" id="fb-icon">
-            <img src="/images/linkedin_symbol_fill.svg" alt="linkedIn icon" id="linkedIn-icon">
-            <a><img src="/images/x_logo_fill.svg" alt="twitter icon" id="twitter-icon"></a>
+
+            <a href="#" id="fb-icon" >
+              <img src="/images/facebook_symbol_fill.svg" alt="facebook icon" >
+            </a>
+            
+            <a href="" id="linkedIn-icon">
+              <img src="/images/linkedin_symbol_fill.svg" alt="linkedIn icon" >
+            </a>
+
+            <a href="" id="twitter-icon">
+              <img src="/images/x_logo_fill.svg" alt="twitter icon" >
+            </a>
+
           </span>
         </div>
       </div>
@@ -61,12 +71,34 @@
       </div>
 
       <%- include('./partials/footer.ejs') %>  
+
+      <script>
+        const postUrl = "<%= `https://eatupblog.onrender.com/${post._id}` %>";
+        const postTitle = "<%= post.title %>";
+        const postImage = "<%= post.imageUrl %>";
+
+        document.getElementById("fb-icon").addEventListener("click", function(e){
+          e.preventDefault();
+          const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`;
+          window.open(facebookUrl, '_blank');
+        })
+
+        document.getElementById("linkedIn-icon").addEventListener("click", function (e) {
+          e.preventDefault();
+          const linkedInUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(postUrl)}&title=${encodeURIComponent(postTitle)}`;
+          window.open(linkedInUrl, '_blank');
+        })
+
+        document.getElementById("twitter-icon").addEventListener("click", function (e) {
+          e.preventDefault();
+          const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(postTitle)}&url=${encodeURIComponent(postUrl)}`;
+          window.open(twitterUrl, '_blank');
+        })
+        
+      </script>
     
 
     </div>
 
-    
-     
-    
   </body>
 </html>
