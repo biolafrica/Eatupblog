@@ -248,13 +248,10 @@ input{
   left: 0px;
   bottom: 0px;
   top: 0px;
-  
-
 }
 
 .menu-open{
   transition: transform 0.1s;
-
 }
 
 .sub-main{
@@ -262,7 +259,6 @@ input{
   flex-direction: column;
   gap: 1.5rem;
   padding: 0 20px; 
-  
 }
 
 .sub-main a{
@@ -287,7 +283,6 @@ input{
   z-index: 100;
   align-items: center;
   box-sizing: border-box;
-  
 }
 
 .open-search{
@@ -371,49 +366,6 @@ input{
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
-
-/*.recent-card{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  row-gap: 30px;
-  column-gap: 30px;
-  margin: 0 auto;
-}
-
-.sub-container{
-  display: flex;
-  width: 100%;
-  margin: 0px auto;
-}
-
-.card-container{
-  padding: 25px;
-  border-radius: 20px;
-  box-sizing: border-box;
-  width: 30%;
-  height: 353px ;
-}
-
-.card-container:hover{
-  background-color: var(--layout-background);
-}
-.card-container:active{
-  transform: translateY(2px)
-}
-
-.card-container img{
-  border-radius: 20px;
-  width: 100%;
-  
-}
-
-.card-image{
-  margin-bottom: 30px;
-  width: 80%;
-  height: 60%;
-} */
-
 
 .card-body h5{
   color: var(--sec-text);
