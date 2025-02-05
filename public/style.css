@@ -139,6 +139,7 @@ input:focus{
   background-color: #f8c426;
   color: black;
   box-sizing: border-box;
+  width: fit-content;
 }
 
 button,
@@ -540,7 +541,10 @@ input{
 }
 
 .come-work-text {
-  width: 25%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   
 }
 
@@ -550,12 +554,16 @@ input{
 }
 
 .come-work-image {
-  width: 30%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .come-work-image img {
-  width: 180px;
-  height: 180px;
+  width: 300px;
+  height: 300px;
+
 }
 
 
@@ -672,6 +680,52 @@ input{
 .appreciation-display{
   display: grid;
   margin: 50px auto;
+}
+
+.mission-text,
+.vision-text {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #f8c426;
+
+
+}
+
+.mission,
+.vision {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 300px auto;
+}
+
+.mission_top,
+.vision_top {
+  width: 35%;
+
+}
+
+.mission h5,
+.vision h5 {
+  width: 50%;
+  color: var(--sec-text);
+}
+
+.picture-intro,
+.who-we-are,
+.mission,
+.vision,
+.come-work {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media(min-width:993px) {
@@ -813,6 +867,20 @@ input{
     letter-spacing: 0.5%;
 
   }
+
+  .mission,
+  .vision {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mission_top,
+  .vision_top,
+  .mission h5,
+  .vision h5 {
+    width: 100%;
+  }
 }
 
 @media(max-width:768px){
@@ -911,8 +979,10 @@ input{
   .who-we-are {
     flex-direction: column;
     gap: 30px;
-    padding: 100px 0px;
-   
+    padding:40px 20px;
+    height: fit-content;
+    margin: 100px auto;
+    
   }
 
   .who-we-are-image {
@@ -1003,4 +1073,19 @@ input{
 
   }
 
+  .mission,
+  .vision {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .mission_top,
+  .vision_top,
+  .mission h5,
+  .vision h5 {
+    width: 100%;
+  }
+
 }
+
