@@ -222,12 +222,15 @@ const adminEditGet = async(req, res)=>{
     };
 
     res.render("editPost", {data, locals});
+    console.log(data)
     
   } catch (error) {
+
     const locals ={
       title : "Error Page",
       description : "Eatup Food Services Limited Official Blog"
     };
+
     res.status(404).render("error", {locals});
     
   }
@@ -237,13 +240,17 @@ const adminEditGet = async(req, res)=>{
 
 const adminEditPut = async(req, res)=>{
   const id = req.params.id;
+  const {title, body} = req.body;
   
   try {
     const data = await Post.findByIdAndUpdate(id,{
-      title : req.body.title,
-      body : req.body.body,
+      title,
+      body,
       UpdatedAt : Date.now()
-    })
+    }, {new : true});
+
+    console.log("updated data", data)
+
     res.status(201).json({id: data._id});
     
   } catch (error) {

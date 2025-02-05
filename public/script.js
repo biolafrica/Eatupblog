@@ -8,11 +8,6 @@
   const searchText = document.querySelector('.input');
   const hamburgerBtn = document.querySelectorAll(".menujs");
   const navList = document.querySelector('.sub-mainjs');
-  const facebook = document.getElementById("fb-icon");
-  const linkedIn = document.getElementById("linkedIn-icon");
-  const twitter = document.getElementById("twitter-icon");
-
-
 
   searchBtn.forEach((btn)=>{
     btn.addEventListener('click', ()=>{
@@ -58,14 +53,12 @@
             }
         });
       },
-      
+
       { threshold: 0.2 }
     );
 
     sections.forEach((section) => observer.observe(section));
-});
-
-
+  });
 
 }());
 
