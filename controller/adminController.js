@@ -222,7 +222,6 @@ const adminEditGet = async(req, res)=>{
     };
 
     res.render("editPost", {data, locals});
-    console.log(data)
     
   } catch (error) {
 
@@ -248,8 +247,6 @@ const adminEditPut = async(req, res)=>{
       body,
       UpdatedAt : Date.now()
     }, {new : true});
-
-    console.log("updated data", data)
 
     res.status(201).json({id: data._id});
     
